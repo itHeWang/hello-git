@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>hello-vue</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            color: darkgray
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+      <!--  <input type="text" v-model="num">
+        <button v-on:click="num++">+</button><button @click="num&#45;&#45;">-</button>
+        <h2>{{name}} 非常耍</h2>
+        <h2>{{num}} 非常耍</h2>
+
+        <button @click="add">点我</button>
+
+        <span v-html="hello"></span>
+        <span v-text="hello"></span>
+
+        <br/>
+
+        <input type="checkbox" v-model="language" value="java">
+        <input type="checkbox" v-model="language" value="php">
+        <input type="checkbox" v-model="language" value="swift">
+
+        <h1>
+            你选择了：{{language.join('-')}}
+        </h1>
+
+
+        <hr/>-->
+
+        <!--<div @click="clickMe('div')" style="border: blue 1px solid;width: 100px;height: 100px;">
+            <button @click.stop="clickMe('btn')" @contextmenu.prevent="rightClick('哈哈哈')">点我试试</button>
+        </div>-->
+
+       <!-- <input type="text" @keyup.enter="rightClick('回车')">
+
+        <input type="text" @keyup.esc="clickMe">-->
+
+       <!-- <button @click="show=!show">点我呀,给你的color see see</button>
+        <table v-if="show">
+            <tr v-for="(user,index) in users"  v-if="index%2==0" >
+                <td v-text="index+1" ></td>
+                <td v-text="user.name"></td>
+                <td v-text="user.age"></td>
+                <td v-text="user.gender"></td>
+            </tr>
+            <tr v-else style="background-color: blueviolet">
+                <td v-text="index+1" ></td>
+                <td v-text="user.name"></td>
+                <td v-text="user.age"></td>
+                <td v-text="user.gender"></td>
+            </tr>
+        </table>-->
+
+        <button @click="color='red'">红</button>
+        <button @click="color='blue'">蓝</button>
+        <div id="box" :class="color">
+            点击按钮，背景会切换颜色哦
+        </div>
+
+
+
+    </div>
+</body>
+
+<script type="text/javascript">
+
+   var app= new Vue({
+       el:"#app",  //定义数据要显示的html标签
+       data:{
+           name:"有哥",
+           num:1,
+           hello:"<h1>大家好 我是胡歌</h1>",
+           language:[],
+           users:[
+               {name:'柳岩', gender:'女', age: 21},
+               {name:'有哥', gender:'男', age: 30},
+               {name:'范冰冰', gender:'女', age: 24},
+               {name:'刘亦菲', gender:'女', age: 18},
+               {name:'古力娜扎', gender:'女', age: 25}
+           ],
+           show:true,
+           color:"red"
+       },
+       methods:{
+           add:function () {
+               console.log("我是RMB")
+           },
+           clickMe:function(val){
+               console.log("hello,"+val);
+           },
+           rightClick:function(msg){
+               alert(msg);
+           },
+
+
+       }
+
+
+   });
+</script>
+</html>
